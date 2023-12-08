@@ -1,0 +1,116 @@
+
+.navigation_bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 15px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-image: linear-gradient(rgba(9, 5, 0, 2), rgba(2, 5, 32, 1));
+}
+
+
+#nav_close {
+    display: none;
+}
+
+.nav_brand svg {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.nav_brand:hover {
+    cursor: pointer;
+    transform: rotate3d(360);
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav_items {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+
+
+.nav_link a{
+    color: #fff;
+    font-weight: bolder;
+}
+
+
+.nav_items .nav_link:hover {
+    padding: 5px 0;
+    color: #117ba6;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transition: 1000ms ease;
+    cursor: pointer;
+}
+
+.cart {
+    color: #fff;
+}
+
+/* Media Queries */
+@media screen and (max-width:835px) {
+
+    .navigation_bar {
+        padding: 20px 40px;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: inline;
+        position: relative;
+        z-index: 3;
+    }
+
+    .hamburger .line {
+        height: 0.25rem;
+        width: 2rem;
+        background: #fff;
+        margin: 0.3rem 0;
+        transition: 300ms ease;
+    }
+
+    .nav_items {
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        z-index: 2;
+        background-image: linear-gradient(to bottom, rgb(96, 180, 253), rgb(140, 199, 250));
+        width: 100%;
+        height: 100vh;
+        transition: 300ms ease;   
+    }
+
+    .active {
+        right: 0;
+    }
+
+    .nav__link a{
+        color: #161414;
+        font-weight: lighter;
+    }
+
+    .hamburger .active:nth-child(1) {
+        transform: translateY(10px) rotateZ(45deg);
+    }
+
+    .hamburger .active:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger .active:nth-child(3) {
+        transform: translateY(-7px) rotateZ(-45deg);
+    }
+}

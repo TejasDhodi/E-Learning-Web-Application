@@ -1,0 +1,85 @@
+.wishList_Section {
+    height: auto;
+    width: 100%;
+    margin: 7.5rem  0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 300ms ease;
+    
+}
+
+.wishList_Section ul  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background: #f6eab9;
+    padding: 1rem;
+    border-bottom: 1px solid;
+    margin-top: 1rem;
+}
+
+.wishList_Section ul li {
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.wishList_Section ul li img{
+    height: 3.5rem;
+    width: 10rem;
+}
+
+.wishList_Section ul li:nth-child(4) {
+    width: 50%;
+}
+
+.wishList_Section ul li:nth-child(5) {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+}
+
+
+/* Media Queries */
+@media screen and (max-width:481px) {
+
+    .wishList_Section ul {
+        gap: 1rem;
+    }
+
+    .wishList_Section ul li img {
+        width: 5rem;
+    }
+
+    .wishList_Section ul li {
+        font-size: .7rem;
+    }
+
+    .wishList_Section ul li:nth-child(3) {
+        text-align: center;
+    }
+
+    .wishList_Section ul li:nth-child(4) {
+        width: 11%;
+    }
+    .wishList_Section ul li:nth-child(5) {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:376px) {
+    .wishList_Section ul li:nth-child(4) {
+        width: 13%;
+        font-size: 0.5rem;
+    }
+
+    .wishList_Section ul li:nth-child(5) {
+        font-size: .8rem;
+    }
+}

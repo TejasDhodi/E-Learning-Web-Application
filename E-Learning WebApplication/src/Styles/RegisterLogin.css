@@ -1,0 +1,148 @@
+
+/* Log-in Form */
+
+.login {
+    position: fixed;
+    top: -100%;
+    left: 35rem;
+    width: 22%;
+    color: #01062c;
+    background-color: aliceblue;
+    box-shadow: 0 0 15px 3px #475bf0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    z-index: 9;
+}
+
+.openForm {
+    transition: 1000ms ease;
+    top: 10rem;
+}
+
+.form_title {
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+
+.user_inputs {
+    width: 100%;
+    margin: 10px 0;
+}
+
+
+.user_inputs input {
+    border: none;
+    background-color: aliceblue;
+    border-bottom: 1px solid #01062c;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 5px;
+}
+
+.user_inputs label {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.form_btn button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #1e17e8;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.close_form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #1e17e8;
+    color: #fff;
+    border-radius: 0 12px 0 0;
+    cursor: pointer;
+}
+
+/* Register Form */
+
+.register_container {
+    position: fixed;
+    top: -100%;
+    left: 35rem;
+    width: 22%;
+    color: #01062c;
+    background-color: aliceblue;
+    box-shadow: 0 0 15px 3px #475bf0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    z-index: 9;
+    transition: 1000ms ease;
+}
+
+.showRegister {
+    top: 10rem;
+}
+
+.error_message {
+    text-align: center;
+    margin-top: 1rem;
+    color: red;
+    transition: 300ms ease;
+}
+
+@media screen and (max-width:1025px) {
+    .register_container, .login{
+        width: 30%;
+        left: 25rem;
+
+    }
+}
+
+@media screen and (max-width:835px) {
+    .register_container, .login{
+        left: 20rem;
+    }
+
+    .showRegister {
+        top: 7rem;
+    }
+
+    .form_title {
+        font-size: 1.2rem;
+    }
+
+    .user_inputs label {
+        font-size: 1rem;
+    }
+
+    .form_btn button {
+        padding: 5px 12px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .register_container, .login{
+        left: 17rem;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .register_container, .login{
+        left: 6rem;
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .register_container, .login{
+        left: 4.5rem;
+    }
+}

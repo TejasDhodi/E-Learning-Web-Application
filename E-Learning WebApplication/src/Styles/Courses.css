@@ -1,0 +1,199 @@
+#couses {
+    padding: 7% 5% 3%;
+}
+
+#couses .course_title {
+    margin-bottom: 50px;
+    text-align: center;
+    color: #01062c;
+    font-weight: bolder;
+}
+
+.course_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.course_card_image {
+    width: 250px;
+    height: 200px;
+}
+
+.course_card_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.course_card_body {
+    box-shadow: 5px 5px 10px #c7bdbd;
+    border-radius: 10px;
+}
+
+
+.course_card_body:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px #524949;
+}
+
+
+.course_card_details {
+    padding: 10px;
+    text-align: center;
+}
+
+
+.get_course {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 20px;
+}
+
+.get_course a {
+    padding: 10px 15px;
+    color: #1e17e8;
+    background-color: rgb(183, 225, 255);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.get_course a:hover {
+    color: #fff;
+    background-color: #1e17e8;
+}
+
+/* For Couses Page */
+.CoursesPage .course_card_body {
+    height: auto;
+    width: 22.5rem;
+    box-shadow: 5px 5px 10px #c7bdbd;
+    border-radius: 10px;
+    position: relative;
+}
+
+.CoursesPage .course_card_image {
+    width: 360px;
+    height: 200px;
+}
+
+.CoursesPage .course_card_details {
+    text-align: left;
+}
+
+.CoursesPage .course_card_details .cost {
+    background-color: rgb(74, 74, 136);
+    color: #fff;
+    line-height: 70px;
+    padding: 0 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+}
+
+.get_Btn {
+    padding: 0.3rem 1rem;
+    margin: 0.5rem 0 0.2rem;
+    background-color: rgb(74, 74, 136);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 0 5px;
+}
+
+.wish_list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.star {
+    color: gold;
+}
+
+.wishNote {
+    position: absolute;
+    top: 0.5rem;
+    right: 3rem;
+    background: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0 10px 0 10px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 300ms ease-in-out;
+}
+
+.show {
+    z-index: 100;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.search {
+    text-align: center;
+    margin: 0 0 2rem;
+}
+
+.search input {
+    width: 50%;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width:1025px) {
+    #couses {
+        padding: 10% 5% 3%;
+    }
+}
+
+@media screen and (max-width:835px) {
+
+    .course_card_image {
+        width: 300px;
+    }
+
+    .search input {
+        width: 70%;
+    }
+
+    /* For Courses page */
+    #couses .course_title {
+        margin: 3rem 0 2rem;
+    }
+}
+
+@media screen and (max-width:769px) {
+
+    .CoursesPage .course_card_body {
+        width: 20.5rem;
+    }
+
+    .CoursesPage .course_card_image {
+        width: 328px;
+    }
+
+    .CoursesPage .course_card_details .cost {
+        padding: 0 1rem;
+    }
+
+}
+
+@media screen and (max-width:481px) {
+    #couses {
+        padding: 13% 5% 3%;
+    }
+
+    .search input {
+        padding: 0.5rem 2rem;
+    }
+}

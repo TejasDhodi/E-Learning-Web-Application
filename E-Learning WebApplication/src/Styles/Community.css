@@ -1,0 +1,52 @@
+#experts {
+    width: 100%;
+    background-color: rgb(251, 251, 251);
+    color: #01062c;
+    padding: 20px;
+}
+
+.experts_title {
+    margin: 50px 0;
+    text-align: center;
+}
+
+
+.experts_title p {
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.expert_box {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.profile_img {
+    width: 200px;
+    height: 200px;
+}
+
+.profile_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile_description {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.profile_description h4 {
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.profile_description p {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    margin: 5px 0;
+}
