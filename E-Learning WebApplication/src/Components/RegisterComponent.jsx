@@ -22,7 +22,7 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
         e.preventDefault();
         try {
 
-            const res = await axios.post('http://localhost:3000/api/register/register', userData, {
+            const res = await axios.post('https://authentication-dtqs.onrender.com/api/register/register', userData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
