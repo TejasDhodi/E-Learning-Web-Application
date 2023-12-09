@@ -51,7 +51,7 @@ const Courses = () => {
                 <div className="course_container">
 
                     {
-                        courseCardDetails.filter((item) => item.Title.toLocaleLowerCase().includes(search)).map((currElem, index) => {
+                        courseCardDetails.filter((item) => item.Title.toLocaleLowerCase().includes(search.toLocaleLowerCase())).map((currElem, index) => {
                             const { Image, Title, Cost, Date, Rating, Id } = currElem;
                             const { one, two, three, four, five } = Rating;
 
