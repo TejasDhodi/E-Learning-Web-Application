@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CourseCardComponent from '../Components/CourseCardComponent'
 import { courseCardDetails } from '../Services/Api'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { add } from '../Fetures/wishlistSlice'
 import { useDispatch } from 'react-redux'
 import "../Styles/Courses.css"
@@ -11,13 +11,6 @@ const Courses = () => {
     const dispatch = useDispatch();
 
     const [search, setSearch] = useState('');
-
-    // Check Wheather user is loged in or not
-    // useEffect(() => {
-    //     if (!localStorage.getItem('token')) {
-    //         navigate('/')
-    //     }
-    // },[])
 
     const redirectToCourseDetails = (courseId) => {
         navigate(`/Courses/details/${courseId}`)
@@ -30,10 +23,10 @@ const Courses = () => {
             name: Item.Title,
             cost: Item.Cost,
         };
-        
+
         dispatch(add(payload));
     }
-    
+
 
     return (
         <>
@@ -45,7 +38,7 @@ const Courses = () => {
                 </div>
 
                 <div className="search">
-                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='🔍 Search By Name'/>
+                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='🔍 Search By Name' />
                 </div>
 
                 <div className="course_container">
@@ -56,6 +49,7 @@ const Courses = () => {
                             const { one, two, three, four, five } = Rating;
 
                             return (
+
                                 <CourseCardComponent
                                     Image={Image}
                                     Title={Title}
@@ -73,6 +67,7 @@ const Courses = () => {
                             )
                         })
                     }
+
                 </div>
 
             </section>

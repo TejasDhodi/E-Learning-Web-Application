@@ -35,7 +35,7 @@ const CourseCardComponent = ({ Image, Title, Cost, Date, one, two, three, four, 
                             <>
                                 <button className='get_Btn' onClick={redirectToCourseDetails}>Get</button>
                                 <span className='wish_list' onClick={handleAdd} onMouseLeave={hideWishlist} onMouseEnter={showWishlist}>❤️</span>
-                                <span className={wishList? 'wishNote show': 'wishNote'} >Add To WishList..!</span>
+                                <span className={wishList ? 'wishNote show' : 'wishNote'} >Add To WishList..!</span>
                             </>
                         }
                     </div>

@@ -4,7 +4,7 @@ import { courseCardDetails1 } from '../Services/Api'
 import '../Styles/Courses.css'
 import { NavLink } from 'react-router-dom';
 
-const CoursesComponent = ({handleShowError}) => {
+const CoursesComponent = ({ handleShowError }) => {
 
     const token = localStorage.getItem('token');
 

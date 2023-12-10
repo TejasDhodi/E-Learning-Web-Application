@@ -31,10 +31,10 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
             if (res.status === 201) {
                 setShowRegister(false);
                 setUserData({
-                    userName : "",
-                    emailId : "",
-                    password : "",
-                    cPassword : ""
+                    userName: "",
+                    emailId: "",
+                    password: "",
+                    cPassword: ""
                 });
                 alert('Registration Successful! Please Login');
                 setShowLogin(true);
@@ -62,22 +62,22 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
                 <form onSubmit={handleSubmit}>
                     <div className="user_inputs">
                         <label htmlFor="username">User Name</label>
-                        <input type="text" name="userName"  value={userData.userName} onChange={handleInputs} placeholder="Enter Your Username" />
+                        <input type="text" name="userName" value={userData.userName} onChange={handleInputs} placeholder="Enter Your Username" />
                     </div>
 
                     <div className="user_inputs">
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="emailId"  value={userData.emailId} onChange={handleInputs} placeholder="Enter Your Email" />
+                        <input type="email" name="emailId" value={userData.emailId} onChange={handleInputs} placeholder="Enter Your Email" />
                     </div>
 
                     <div className="user_inputs">
                         <label htmlFor="password">Password</label>
-                        <input type="text" name="password"  value={userData.password} onChange={handleInputs} placeholder="Enter Your Password" />
+                        <input type="text" name="password" value={userData.password} onChange={handleInputs} placeholder="Enter Your Password" />
                     </div>
 
                     <div className="user_inputs">
                         <label htmlFor="c_password">Confirm Password</label>
-                        <input type="password" name='cPassword'  value={userData.cPassword} onChange={handleInputs} placeholder="Enter Your Password" />
+                        <input type="password" name='cPassword' value={userData.cPassword} onChange={handleInputs} placeholder="Enter Your Password" />
                     </div>
 
                     <div className="form_btn">

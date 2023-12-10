@@ -14,7 +14,7 @@ const CommunityExperts = () => {
                 <div className="expert_box">
                     {
                         communityExpertsDetails.map((currElem, index) => {
-                            const { Image, Name, Description} = currElem;
+                            const { Image, Name, Description } = currElem;
                             return (
                                 <div className="profile" key={index}>
                                     <div className="profile_img">

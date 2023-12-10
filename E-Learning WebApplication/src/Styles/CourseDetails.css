@@ -105,7 +105,7 @@
     margin-top: 40px;
 }
 
-.getVideoBtn a{
+.getVideoBtn a {
     padding: 10px 15px;
     color: #1e17e8;
     background-color: rgb(183, 225, 255);
@@ -113,6 +113,7 @@
     font-size: 1.1rem;
     font-weight: bolder;
     transition: 500ms ease;
+    cursor: pointer;
 }
 
 .getVideoBtn a:hover {
@@ -135,6 +136,7 @@
     #coursedetails {
         padding: 8vw 5vw;
     }
+
     #coursedetails .course_header {
         margin: 4.5rem 0 0;
     }
@@ -143,17 +145,19 @@
         width: 100%;
     }
 
-    #coursedetails .overview .course_head .c_name p, #coursedetails .overview p {
+    #coursedetails .overview .course_head .c_name p,
+    #coursedetails .overview p {
         font-size: 13px;
     }
 
     .getVideoBtn a {
         font-size: 0.7rem;
+        cursor: pointer;
     }
 
     #coursedetails .overview .course_head span {
         padding: 7px 14px;
         font-size: 13px;
-        
+
     }
 }

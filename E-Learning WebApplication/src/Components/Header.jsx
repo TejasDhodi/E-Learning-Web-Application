@@ -80,14 +80,17 @@ const Header = () => {
                 </div>
             </nav>
 
-            <section className='LoginRegister'>
-                <LoginComponent showLogin={showLogin} setShowLogin={setShowLogin} showRegister={showRegister} />
-                <RegisterComponent showRegister={showRegister} setShowRegister={setShowRegister} setShowLogin={setShowLogin} />
-                {
-                    (showLogin || showRegister) && <BlurComponent />
-                }
+            {
+                (showLogin || showRegister) &&
+                <section className='LoginRegister'>
+                    <LoginComponent showLogin={showLogin} setShowLogin={setShowLogin} showRegister={showRegister} />
+                    <RegisterComponent showRegister={showRegister} setShowRegister={setShowRegister} setShowLogin={setShowLogin} />
+                    {
+                        (showLogin || showRegister) && <BlurComponent />
+                    }
 
-            </section>
+                </section>
+            }
 
         </>
     )
