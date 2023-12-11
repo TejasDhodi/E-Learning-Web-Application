@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { IoMdClose } from "react-icons/io";
-import axios from 'axios';
+import Loading from './Loading';
 import { setToken } from '../Fetures/authSlice';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import { IoMdClose } from "react-icons/io";
 
 import '../Styles/RegisterLogin.css'
 
@@ -13,6 +14,7 @@ const LoginComponent = ({ showLogin, setShowLogin }) => {
     });
 
     const [regError, setRegError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -21,19 +23,54 @@ const LoginComponent = ({ showLogin, setShowLogin }) => {
         setUserData((prevData) => ({ ...prevData, [name]: value }))
     };
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+
+    //         const res = await axios.post('https://authentication-dtqs.onrender.com/api/login/login', userData, {
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         });
+    //         setShowLogin(true);
+
+    //         const data = res.data
+
+    //         if (res.status === 200) {
+    //             dispatch(setToken(data.token))
+    //             alert('Login Successful');
+    //             setUserData({
+    //                 emailId: "",
+    //                 password: ""
+    //             });
+    //             setShowLogin(false);
+    //             console.log(data);
+    //         }
+
+    //     } catch (error) {
+    //         setRegError(error.response.data)
+    //         console.log("Unable to login", error);
+    //     } finally {
+    //         setLoading(false)
+    //     }
+    // }
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setLoading(true);
+
             const res = await axios.post('https://authentication-dtqs.onrender.com/api/login/login', userData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
 
-            const data = res.data
+            setShowLogin(true);
+
+            const data = res.data;
 
             if (res.status === 200) {
-                dispatch(setToken(data.token))
+                dispatch(setToken(data.token));
                 alert('Login Successful');
                 setUserData({
                     emailId: "",
@@ -44,8 +81,10 @@ const LoginComponent = ({ showLogin, setShowLogin }) => {
             }
 
         } catch (error) {
-            setRegError(error.response.data)
+            setRegError(error.response.data);
             console.log("Unable to login", error);
+        } finally {
+            setLoading(false);
         }
     }
     return (
@@ -68,9 +107,12 @@ const LoginComponent = ({ showLogin, setShowLogin }) => {
                         <input type="password" name="password" value={userData.password} onChange={handleInputs} placeholder="Enter Your Password" />
                     </div>
 
-                    <div className="form_btn">
-                        <button type="submit">Sign in</button>
-                    </div>
+                    {
+                        loading ? <Loading /> :
+                            <div className="form_btn">
+                                <button type="submit">Sign in</button>
+                            </div>
+                    }
 
                     {
                         regError && <p className='error_message'>{JSON.stringify(regError).slice(34).split('"}').join(" ") || JSON.stringify(regError).slice(8).split('"}').join(" ")}</p>

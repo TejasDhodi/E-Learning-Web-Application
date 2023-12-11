@@ -24,7 +24,7 @@
 
 .openForm {
     transition: 1000ms ease;
-    top: 10rem;
+    top: 25%;
 }
 
 .form_title {
@@ -93,7 +93,7 @@
 }
 
 .showRegister {
-    top: 10rem;
+    top: 25%;
 }
 
 .error_message {
@@ -101,6 +101,11 @@
     margin-top: 1rem;
     color: red;
     transition: 300ms ease;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width:1025px) {

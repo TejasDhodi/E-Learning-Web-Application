@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { IoMdClose } from "react-icons/io";
+import Loading from './Loading';
 import axios from 'axios';
+import { IoMdClose } from "react-icons/io";
 import '../Styles/RegisterLogin.css'
 
 const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
@@ -12,6 +13,8 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
     });
 
     const [regError, setRegError] = useState('')
+    const [loading, setLoading] = useState(false);
+
 
     const handleInputs = (e) => {
         const { name, value } = e.target;
@@ -21,6 +24,8 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+
+            setLoading(true);
 
             const res = await axios.post('https://authentication-dtqs.onrender.com/api/register/register', userData, {
                 headers: {
@@ -45,6 +50,8 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
         } catch (error) {
             console.log("Unable to Register user", error.response.data);
             setRegError(error.response.data)
+        } finally {
+            setLoading(false);
         };
     };
 
@@ -80,9 +87,12 @@ const RegisterComponent = ({ showRegister, setShowRegister, setShowLogin }) => {
                         <input type="password" name='cPassword' value={userData.cPassword} onChange={handleInputs} placeholder="Enter Your Password" />
                     </div>
 
-                    <div className="form_btn">
-                        <button type="submit">Sign up</button>
-                    </div>
+                    {
+                        loading ? <Loading /> :
+                            <div className="form_btn">
+                                <button type="submit">Sign up</button>
+                            </div>
+                    }
 
                     {
                         regError && <p className='error_message'>{JSON.stringify(regError).slice(34).split('"}').join(" ") || JSON.stringify(regError).slice(8).split('"}').join(" ")}</p>
